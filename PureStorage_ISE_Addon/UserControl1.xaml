@@ -1,0 +1,80 @@
+﻿<UserControl x:Class="PureStorage_ISE_Addon.PsISETab"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:PureStorage_ISE_Addon"
+             mc:Ignorable="d" Height="647.333" Width="338">
+    <UserControl.Resources>
+        <Style x:Key="lvVolumes" TargetType="{x:Type ListViewItem}">
+            <EventSetter Event="MouseDoubleClick" Handler="DoDoubleClick" />
+        </Style>
+    </UserControl.Resources>
+    <Grid Margin="0,0,-86,-193.667" HorizontalAlignment="Left" Background="White" VerticalAlignment="Top">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="103*"/>
+            <ColumnDefinition Width="95*"/>
+            <ColumnDefinition Width="194*"/>
+            <ColumnDefinition Width="32*"/>
+        </Grid.ColumnDefinitions>
+        <Image x:Name="PsLogo" HorizontalAlignment="Left" Height="34" Margin="10,10,0,0" VerticalAlignment="Top" Width="37" Source="Media/p.png"/>
+        <Label x:Name="Title" Content="Pure Storage FlashArray Management Add-on" HorizontalAlignment="Left" Height="24" Margin="53,10,0,0" VerticalAlignment="Top" Width="272" FontFamily="Proxima Nova" Grid.ColumnSpan="3" FontWeight="Bold"/>
+        <Label x:Name="Description" Content="Management and Script Generation Utility" HorizontalAlignment="Left" Margin="53,24,0,0" VerticalAlignment="Top" Grid.ColumnSpan="3" Width="251" FontFamily="Proxima Nova" Height="24" FontSize="10"/>
+        <Button x:Name="btnAdd" TabIndex="3" Content="Add" HorizontalAlignment="Left" Margin="76.667,95,0,0" VerticalAlignment="Top" Width="50" Height="22" Click="btnAdd_Click" Grid.Column="2"/>
+        <ListView x:Name="lvFlashArrays" Grid.ColumnSpan="3" HorizontalAlignment="Left" Height="107" Margin="10,126,0,0" VerticalAlignment="Top" Width="319" SelectionChanged="lvFlashArrays_SelectionChanged">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn/>
+                </GridView>
+            </ListView.View>
+        </ListView>
+        <Label x:Name="lblFaConnectHeader" Content="Name/IP:" HorizontalAlignment="Right" Height="28" Margin="0,63,20.667,0" VerticalAlignment="Top" Width="72"/>
+        <TextBox x:Name="txtUserName" TabIndex="1" Grid.ColumnSpan="2" HorizontalAlignment="Left" Height="23" Margin="72,94,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="89" ToolTip="Enter user name" FontFamily="Proxima Nova"/>
+        <TextBox x:Name="txtFlashArray" TabIndex="0" Grid.ColumnSpan="3" HorizontalAlignment="Left" Height="23" Margin="72,66,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="253"/>
+        <PasswordBox x:Name="pwdPwd" TabIndex="2" Grid.Column="1" HorizontalAlignment="Left" Margin="67.333,94,0,0" VerticalAlignment="Top" Width="99" Height="23" ToolTip="Enter password" Cursor="None" Grid.ColumnSpan="2"/>
+        <Label x:Name="lblFaConnectHeader_Copy" Content="Login:" HorizontalAlignment="Right" Height="28" Margin="0,91,20.667,0" VerticalAlignment="Top" Width="72"/>
+        <ListView x:Name="lvHosts" Grid.ColumnSpan="3" HorizontalAlignment="Left" Height="154" Margin="10,268,0,0" VerticalAlignment="Top" Width="319">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn/>
+                </GridView>
+            </ListView.View>
+        </ListView>
+        <Label x:Name="lblFaConnectHeader_Copy1" Content="Hosts" HorizontalAlignment="Right" Height="28" Margin="0,238,53,0" VerticalAlignment="Top" Width="134" Grid.ColumnSpan="2"/>
+        <TextBox x:Name="txtFilterHosts" Grid.Column="2" HorizontalAlignment="Left" Height="23" Margin="11,240,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="txtFilterVolumes" Grid.Column="2" HorizontalAlignment="Left" Height="23" Margin="11,428,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <Image x:Name="poshLogo" HorizontalAlignment="Left" Height="28" Margin="26,31,0,0" VerticalAlignment="Top" Width="23" Source="Media/ISE.png"/>
+        <Image x:Name="imgFilter" Grid.Column="1" HorizontalAlignment="Left" Height="18" Margin="84.333,241,0,0" VerticalAlignment="Top" Width="26" Source="Media/filter.png" Grid.ColumnSpan="2"/>
+        <Image x:Name="imgFilter_Copy" Grid.Column="1" HorizontalAlignment="Left" Height="18" Margin="84.333,429,0,0" VerticalAlignment="Top" Width="26" Source="Media/filter.png" Grid.ColumnSpan="2"/>
+        <TabControl x:Name="tabControl" Grid.ColumnSpan="3" HorizontalAlignment="Left" Height="211" Margin="10,432,0,0" VerticalAlignment="Top" Width="319">
+            <TabItem Header="Volumes">
+                <Grid Background="#FFE5E5E5">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="84*"/>
+                        <ColumnDefinition Width="7*"/>
+                        <ColumnDefinition Width="222*"/>
+                    </Grid.ColumnDefinitions>
+                    <ListView x:Name="lvVolumes" HorizontalAlignment="Left" Height="184" Margin="0,0,0,-1.333" VerticalAlignment="Top" Width="313" Grid.ColumnSpan="3" SelectionChanged="lvVolumes_SelectionChanged">
+                        <ListView.View>
+                            <GridView>
+                                <GridViewColumn/>
+                            </GridView>
+                        </ListView.View>
+                    </ListView>
+                </Grid>
+            </TabItem>
+            <TabItem Header="Snapshots">
+                <Grid Background="#FFE5E5E5">
+                    <ListView x:Name="lvSnapshots" HorizontalAlignment="Left" Height="184" Margin="0,0,0,-1.333" VerticalAlignment="Top" Width="313" SelectionChanged="lvSnapshots_SelectionChanged">
+                        <ListView.View>
+                            <GridView>
+                                <GridViewColumn/>
+                            </GridView>
+                        </ListView.View>
+                    </ListView>
+                </Grid>
+            </TabItem>
+        </TabControl>
+
+    </Grid>
+</UserControl>
