@@ -2,6 +2,6 @@
     "id": "powershell-ise-addon",
     "filter": "microsoft devops",
     "image": "http://code.purestorage.com/images/image2.png",
-    "featured": 1,
+    "featured": 0,
     "priority": 1
 }
