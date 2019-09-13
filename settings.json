@@ -2,7 +2,7 @@
     "id": "powershell-ise-addon",
     "name": "PowerShell ISE Add-on",
     "filter": "microsoft devops",
-    "image": "http://code.purestorage.com/images/3_Powershell-Toolkit.png",
+    "image": "https://code.purestorage.com/images/3_Powershell-Toolkit.png",
     "featured": 0,
     "priority": 3
 }
