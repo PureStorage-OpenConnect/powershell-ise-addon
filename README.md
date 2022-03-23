@@ -10,8 +10,7 @@ Add-on for the Windows PowerShell ISE for managing the Pure Storage FlashArray.
 
 Feedback welcome! 
 
-Remember you can,
-[Add and issue](https://github.com/PureStorage-OpenConnect/powershell-ise-addon/issues) or Fork!
+[Add an issue](https://github.com/PureStorage-OpenConnect/powershell-ise-addon/issues) or Fork!
 
 Thanks,
 Barkz
